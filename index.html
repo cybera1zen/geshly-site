@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>geshly.site - Find real problems worth solving</title>
-<meta name="description" content="geshly.site is an upcoming searchable collection of real problems and complaints people post online, each linked to its public source.">
+<title>geshly.site - Search real problems worth solving</title>
+<meta name="description" content="Search real problems and complaints people posted online. Every result links to its public source.">
 <meta name="theme-color" content="#d71920">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -87,97 +87,109 @@ footer{padding:36px 0;font-size:14px;color:var(--mute)}footer .wrap{display:flex
 @media(max-width:900px){.sticker{display:none}.cards,.rules{grid-template-columns:1fr}.card:nth-child(2){transform:none}.steps{grid-template-columns:1fr 1fr}.step:nth-child(3){border-left:0}.step:nth-child(n+3){border-top:2px solid #fff}.split,.price{grid-template-columns:1fr}.links a:not(.btn){display:none}section{padding:64px 0}.hero{padding:52px 0 48px}}
 @media(max-width:560px){.wrap{padding:0 20px}.steps{grid-template-columns:1fr}.step{border-left:0!important;border-top:2px solid #fff}.step:first-child{border-top:0}.row{grid-template-columns:1fr;gap:8px}.row .st{justify-self:start}.price>div{padding:26px}.big{font-size:64px}.logo{font-size:22px}.lead{font-size:18px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.hero{padding:56px 0 40px}h1{font-size:clamp(38px,6vw,72px)}
+.sbox{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0 14px}
+.sbox input{flex:1;min-width:240px;padding:16px 18px;border:2px solid var(--ink);border-radius:4px;font:400 18px var(--sans);box-shadow:4px 4px 0 var(--ink)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.chip{font:600 12px var(--mono);border:2px solid var(--ink);background:#fff;padding:6px 12px;border-radius:99px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--red);color:#fff}
+.tabs{display:flex;gap:0;margin:34px 0 18px;border:2px solid var(--ink);width:max-content;max-width:100%;border-radius:4px;overflow:hidden}
+.tabs button{border:0;background:#fff;padding:11px 18px;font:700 14px var(--sans);cursor:pointer}
+.tabs button+button{border-left:2px solid var(--ink)}.tabs button[aria-selected=true]{background:var(--ink);color:#fff}
+.meta{font:400 13px var(--mono);color:var(--mute);margin:0 0 18px}
+.list{display:grid;gap:18px}
+.res{border:2px solid var(--ink);border-radius:6px;background:#fff;box-shadow:5px 5px 0 var(--red);overflow:hidden}
+.res .bar{background:var(--tint);border-bottom:2px solid var(--ink);padding:8px 16px;font:600 11px var(--mono);letter-spacing:.05em;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;text-transform:uppercase}
+.res .bar .r{color:var(--red)}
+.res .bd{padding:18px 20px}.res h3{font:700 19px/1.35 var(--sans);margin:0 0 10px}
+.res blockquote{margin:0 0 14px;padding-left:12px;border-left:4px solid var(--red);color:var(--mute);font-size:15px}
+.res dl{margin:0;display:grid;grid-template-columns:80px 1fr;gap:4px 10px;font:400 12.5px var(--mono)}.res dt{color:var(--red)}.res dd{margin:0;color:var(--mute);word-break:break-word}.res dd a{color:var(--red);text-decoration:underline}
+.empty{border:2px dashed var(--ink);padding:30px;text-align:center;color:var(--mute)}
+.rules>div{padding:24px}
+@media(max-width:560px){.res dl{grid-template-columns:70px 1fr}}
 </style>
 </head>
 <body>
-<div class="topbar">IN DEVELOPMENT · NOTHING IS FOR SALE YET · EXAMPLES ARE LABELLED</div>
+<div class="topbar">EARLY VERSION · SEARCH LIVE HACKER NEWS POSTS OR BROWSE LABELLED SAMPLES · NOTHING IS FOR SALE YET</div>
 <header class="nav"><div class="wrap">
 <a class="logo" href="#top" aria-label="geshly.site home">geshly<b>.site</b><svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5 Q6 0 12 5 T25 5 T37 5 T50 5 T62 5 T75 5 T87 5 T100 5" fill="none" stroke="#d71920" stroke-width="2.4"/></svg></a>
-<nav class="links"><a href="#idea">The idea</a><a href="#how">How it works</a><a href="#status">Status</a><a href="#pricing">Pricing</a><a class="btn sm" href="#early">Get early access</a></nav>
+<nav class="links"><a href="#search">Search</a><a href="#rules">Ground rules</a><a href="#faq">FAQ</a><a class="btn sm" href="#early">Get early access</a></nav>
 </div></header>
-
 <main id="top">
-<div class="hero"><div class="wrap">
-<span class="pill"><i></i>Early preview</span>
-<h1>Stop guessing. Build what people <mark>actually need<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q8 0 16 6 T32 6 T48 6 T64 6 T80 6 T100 6" fill="none" stroke="#d71920" stroke-width="3"/></svg></mark>.</h1>
-<p class="lead">geshly.site is being built as a searchable list of real problems and complaints people post online. Every entry links back to the public post it came from.</p>
-<div class="cta"><a class="btn" href="#early">Get early access</a><a class="btn ghost" href="#how">See how it works</a></div>
-<p class="note">// preview page. the product does not exist yet.</p>
-</div>
-<div class="sticker" aria-hidden="true"><div>No source,<br>no entry.<small>our one rule</small></div></div>
-</div>
-<div class="strip"><div class="wrap"><span>No fake testimonials</span><span>No invented user counts</span><span>No made-up customer logos</span><span>No payment before a product</span></div></div>
+<div class="hero" id="search"><div class="wrap">
+<span class="pill"><i></i>Problem database · early version</span>
+<h1>Search the problems people <mark>actually have<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q8 0 16 6 T32 6 T48 6 T64 6 T80 6 T100 6" fill="none" stroke="#d71920" stroke-width="3"/></svg></mark>.</h1>
+<p class="lead">Type a topic. See what people complain about and wish existed, with a link to the original post.</p>
+<form class="sbox" id="f" role="search"><label for="q" style="position:absolute;left:-9999px">Search a topic</label><input id="q" type="search" placeholder='Try: invoice, fitness app, scheduling' autocomplete="off"><button class="btn" type="submit">Search</button></form>
+<div class="chips" id="chips" aria-label="Quick topics"></div>
+<div class="tabs" role="tablist"><button role="tab" id="t-live" aria-selected="true">Live: Hacker News</button><button role="tab" id="t-sample" aria-selected="false">Sample entries</button></div>
+<p class="meta" id="meta"></p>
+<div class="list" id="out" aria-live="polite"></div>
+</div></div>
 
-<section id="idea"><div class="wrap">
-<p class="k">The idea</p><h2>From everyday friction to your next idea.</h2>
-<p class="sub">Good ideas start with a real problem. Less staring at a blank page, more understanding of what people wish worked better. These examples show the kind of entries geshly.site is designed around.</p>
-<div class="cards">
-<div class="card"><span class="tag">Food</span><h3>No app shows which nearby shops have fresh local fruit today</h3><p>Buyers ask in groups every day. Sellers have no easy way to post stock.</p><div class="ft">Potential source: forum post · Illustrative example</div></div>
-<div class="card"><span class="tag">Students</span><h3>Hard to find notes for one chapter without buying a full course</h3><p>Many students want one topic explained, not a 40-hour video series.</p><div class="ft">Potential source: app review · Illustrative example</div></div>
-<div class="card"><span class="tag">Small business</span><h3>Invoices in local languages are painful to make</h3><p>Shop owners copy by hand because billing tools only work well in English.</p><div class="ft">Potential source: community thread · Illustrative example</div></div>
-</div>
-<p class="cap">// concept examples, not verified research. no real demand counts are claimed.</p>
-</div></section>
-
-<section id="how" class="dark"><div class="wrap">
-<p class="k">How it is meant to work</p><h2>Four things, in plain words.</h2>
-<p class="sub">This is the plan. None of it is built yet.</p>
-<div class="steps">
-<div class="step"><div class="n">01</div><h3>Search a topic</h3><p>Type a word like "fitness app" and see the problems people posted about it.</p></div>
-<div class="step"><div class="n">02</div><h3>See the source</h3><p>Every entry is planned to link to the original public post so you can read it yourself.</p></div>
-<div class="step"><div class="n">03</div><h3>Say "me too"</h3><p>Upvote problems you share so the most felt ones rise to the top.</p></div>
-<div class="step"><div class="n">04</div><h3>Save and build</h3><p>Keep the best ones and start on something people want.</p></div>
+<section id="rules" style="background:var(--tint)"><div class="wrap">
+<p class="k">Ground rules</p><h2>What this is, and isn't.</h2>
+<div class="rules" style="margin-top:30px">
+<div class="yes" style="background:#fff"><h3>What you get</h3><ul><li><b>Live tab:</b> real Ask HN posts fetched from Hacker News' official search API when you search. Nothing is stored by us.</li><li>Every live result links to the original post, with its date.</li><li>Sample tab: made-up examples, marked as samples, with no source because none exists.</li><li>Our plan is to add more sources whose terms allow it.</li></ul></div>
+<div class="no"><h3>What it isn't (yet)</h3><ul><li>Not a saved database. We don't store or rank posts yet.</li><li>Not a measure of demand. Points and comments are Hacker News' numbers, not ours.</li><li>Not a source of invented testimonials, customer logos or user counts.</li><li>Nothing is for sale. No payment is taken.</li></ul></div>
 </div></div></section>
 
-<section><div class="wrap split">
-<div><p class="k">What you will see</p><h2>Every problem shows its source.</h2><p class="sub" style="margin:0">This is a mockup of how one entry is meant to look: the problem in plain words, the original text, and where and when it was posted. If we can't link a source, it won't be listed.</p></div>
-<div class="entry" role="img" aria-label="Mockup of a problem entry"><div class="bar"><span>MOCKUP</span><span>EXAMPLE CATEGORY</span></div><div class="body"><h4>Example: a problem summarised in one line</h4><blockquote>"The original public text would appear here, word for word."</blockquote><dl><dt>Source</dt><dd>Platform and link to the original post</dd><dt>Posted</dt><dd>Date of the original post</dd><dt>Collected</dt><dd>Date we saved it</dd></dl></div></div>
-</div></section>
-
-<section id="for"><div class="wrap"><p class="k">Who it's for</p><h2>Built for people who start with a blank page.</h2>
-<p class="sub">Solo builders, indie hackers and small teams hunting for a problem worth solving. And anyone who wants to share a problem they face and see whether others feel it too.</p>
-<div class="cta"><a class="btn" href="#early">Join the early access list</a><a class="btn ghost" href="#pricing">See the planned price</a></div></div></section>
-<section id="status" style="background:var(--tint)"><div class="wrap">
-<p class="k">Where things stand</p><h2>An honest progress report.</h2>
-<p class="sub">geshly.site is early. Here is what exists today and what doesn't.</p>
-<div class="status" style="background:#fff">
-<div class="row"><span class="st done">Done</span><div><b>Idea and product plan</b><span class="d">The product requirements are written down.</span></div></div>
-<div class="row"><span class="st live">Live</span><div><b>This page</b><span class="d">A preview that explains the idea.</span></div></div>
-<div class="row"><span class="st plan">Planned</span><div><b>Collecting public problems</b><span class="d">Data collection is not built yet. Sources are still being chosen.</span></div></div>
-<div class="row"><span class="st no">Not started</span><div><b>Search and the problem database</b><span class="d">Nothing to search yet.</span></div></div>
-<div class="row"><span class="st no">Not started</span><div><b>Early access list</b><span class="d">The email box below is a preview and does not save emails.</span></div></div>
-</div></div></section>
-
-<section id="pricing"><div class="wrap">
-<p class="k">Pricing</p><h2>One plan. One payment.</h2>
-<p class="sub">Planned, not final. Nothing can be bought yet and this price may change before launch.</p>
-<div class="price"><div class="l"><div class="k" style="margin-bottom:6px">Planned price</div><div class="big">$97</div><p style="margin:10px 0 0;color:var(--mute)">One payment in US dollars. No subscription, no recurring charge.</p></div>
-<div><ul><li>Search the problem database once it exists</li><li>See the source behind every problem</li><li>Save problems to come back to</li><li>Updates as the database grows</li></ul><span class="btn" aria-disabled="true" role="button">Pay $97 - not open</span><p class="note">Payments open at launch. This button is off and nothing will be charged.</p></div></div>
-</div></section>
-
-<section style="background:var(--tint)"><div class="wrap">
-<p class="k">Ground rules</p><h2>What we aim to do, and won't do.</h2><p class="sub"></p>
-<div class="rules">
-<div class="yes" style="background:#fff"><h3>We aim to</h3><ul><li>Link every entry to its original public source</li><li>Show when a post was written and when we collected it</li><li>Respect each source's rules and remove content on request</li><li>Say clearly what is built and what isn't</li></ul></div>
-<div class="no"><h3>We won't</h3><ul><li>Invent testimonials, customer logos or user counts</li><li>Make up problems and present them as real</li><li>Sell or publish people's private details</li><li>Ask for payment before there is a product to use</li></ul></div>
-</div></div></section>
-
-<section><div class="wrap" style="max-width:820px">
+<section id="faq"><div class="wrap" style="max-width:820px">
 <p class="k">Questions</p><h2>Straight answers.</h2>
-<details><summary>Is geshly.site live?</summary><p>No. Only this preview page exists. The searchable problem database is still being planned and built.</p></details>
-<details><summary>Where will the problems come from?</summary><p>From public posts and reviews on the web, such as forums, app reviews and community threads, using sources whose terms allow it. The exact sources aren't final. User-submitted problems are also planned.</p></details>
-<details><summary>Will you store my personal information?</summary><p>Not through this page. The email box is a preview and sends nothing. For the product, the plan is to keep public text only and not collect people's names or contact details.</p></details>
-<details><summary>Are the examples on this page real?</summary><p>No. They are labelled as illustrative.</p></details>
-<details><summary>What does it cost?</summary><p>Nothing is for sale yet. The plan is one payment in US dollars, planned at $97 and not final.</p></details>
+<details><summary>Where do live results come from?</summary><p>Hacker News, through its official public search API (hn.algolia.com). Results are posts of type "Ask HN" matching your words. Content belongs to its authors; each result links to the original.</p></details>
+<details><summary>Are the sample entries real?</summary><p>No. They are invented to show the idea and are labelled "Sample" on every card.</p></details>
+<details><summary>What about other sources like Reddit or app reviews?</summary><p>Not included. We only use sources whose terms allow automated collection, and we'll say which ones when they're added.</p></details>
+<details><summary>Do you store my searches?</summary><p>No. Searching runs in your browser and sends your query to Hacker News' search API. This site has no backend and no analytics.</p></details>
+<details><summary>What will it cost?</summary><p>Nothing is for sale yet. A one-time price of around $97 was an early idea and is not final.</p></details>
 </div></section>
 
 <section class="final" id="early"><div class="wrap">
-<h2>Be first to find your next idea.</h2>
-<p>geshly.site is coming soon. A place to turn everyday problems into things worth building.</p>
+<h2>Want it when it grows up?</h2>
+<p>More sources, saved problems and "me too" votes are planned. Join the early access list.</p>
 <form onsubmit="event.preventDefault();document.getElementById('m').hidden=false"><label for="em" style="position:absolute;left:-9999px">Email</label><input id="em" type="email" placeholder="you@example.com" autocomplete="email"><button class="btn" type="submit">Get early access</button></form>
 <p class="note" id="m" hidden>Preview only: signup is not connected yet. Your email was not saved or sent.</p>
-<p class="note">Preview only: email signup is not connected yet. Your email is not saved or sent.</p>
+<p class="note">Preview only: the email box does not save or send anything yet.</p>
 </div></section>
 </main>
-<footer><div class="wrap"><a class="logo" href="#top">geshly<b>.site</b></a><span>© 2026 geshly.site · In development · Examples are for illustration.</span></div></footer>
+<footer><div class="wrap"><a class="logo" href="#top">geshly<b>.site</b></a><span>© 2026 geshly.site · Early version · Hacker News content belongs to its authors.</span></div></footer>
+<script>
+const SAMPLES=[
+["Food","No app shows which nearby shops have fresh local fruit today","Buyers ask in groups every day. Sellers have no easy way to post stock."],
+["Students","Hard to find notes for one chapter without buying a full course","Many students want one topic explained, not a 40-hour video series."],
+["Small business","Invoices in local languages are painful to make","Shop owners copy by hand because billing tools only work well in English."],
+["Fitness","Workout apps reset my plan every time I miss a week","People want plans that adapt instead of starting over."],
+["Scheduling","Finding a meeting time across three time zones takes ten messages","Calendar tools assume everyone shares one working day."],
+["Freelance","Chasing late invoices feels awkward and nobody automates the polite version","Freelancers want gentle reminders that sound human."],
+["Travel","Group trip expenses end up in a messy spreadsheet","Splitting costs fairly across currencies is still manual."],
+["Parenting","School updates come from five different apps","Parents want one place for homework, fees and events."]];
+const QS=["invoice","fitness","scheduling","notes","pricing","onboarding"];
+let tab="live";const $=i=>document.getElementById(i);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function strip(h){const d=document.createElement("div");d.innerHTML=h||"";return (d.textContent||"").replace(/\s+/g," ").trim()}
+$("chips").innerHTML=QS.map(q=>'<button type="button" class="chip" aria-pressed="false" data-q="'+q+'">'+q+'</button>').join("");
+$("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;$("q").value=b.dataset.q;run()};
+$("f").onsubmit=e=>{e.preventDefault();run()};
+function setTab(t){tab=t;$("t-live").setAttribute("aria-selected",t==="live");$("t-sample").setAttribute("aria-selected",t==="sample");run()}
+$("t-live").onclick=()=>setTab("live");$("t-sample").onclick=()=>setTab("sample");
+function sample(q){
+ const r=SAMPLES.filter(x=>!q||(x.join(" ").toLowerCase().includes(q.toLowerCase())));
+ $("meta").textContent=r.length+" sample entr"+(r.length===1?"y":"ies")+". Invented for illustration. They have no real source.";
+ $("out").innerHTML=r.length?r.map(x=>'<article class="res"><div class="bar"><span>'+esc(x[0])+'</span><span class="r">Sample · not real</span></div><div class="bd"><h3>'+esc(x[1])+'</h3><p style="margin:0;color:var(--mute);font-size:15px">'+esc(x[2])+'</p><dl style="margin-top:14px"><dt>Source</dt><dd>None. Illustrative example.</dd></dl></div></article>').join(""):'<div class="empty">No sample matches. Try the Live tab.</div>';
+}
+async function live(q){
+ const query=q||"wish there was a tool";
+ $("meta").textContent="Searching Hacker News...";$("out").innerHTML="";
+ try{
+  const u="https://hn.algolia.com/api/v1/search?tags=ask_hn&hitsPerPage=20&query="+encodeURIComponent(query);
+  const r=await fetch(u);if(!r.ok)throw 0;const d=await r.json();
+  const h=d.hits||[];
+  $("meta").textContent=(q?"Results for \""+q+"\"":"Showing a default search (\""+query+"\")")+" · "+h.length+" Ask HN posts from Hacker News' official search API. Points and comments are Hacker News numbers.";
+  $("out").innerHTML=h.length?h.map(x=>{const t=strip(x.story_text).slice(0,320);const link="https://news.ycombinator.com/item?id="+encodeURIComponent(x.objectID);const dt=(x.created_at||"").slice(0,10);
+   return '<article class="res"><div class="bar"><span>Ask HN</span><span class="r">Live · real post</span></div><div class="bd"><h3>'+esc(x.title)+'</h3>'+(t?'<blockquote>'+esc(t)+(strip(x.story_text).length>320?"...":"")+'</blockquote>':"")+'<dl><dt>Source</dt><dd><a href="'+link+'" target="_blank" rel="noopener noreferrer">'+link+'</a></dd><dt>Posted</dt><dd>'+esc(dt)+'</dd><dt>On HN</dt><dd>'+esc(x.points)+' points, '+esc(x.num_comments)+' comments</dd><dt>Fetched</dt><dd>When you searched (not stored)</dd></dl></div></article>'}).join(""):'<div class="empty">No Ask HN posts matched. Try another word.</div>';
+ }catch(e){$("meta").textContent="Could not reach Hacker News' search right now. Showing labelled samples instead.";sample(q)}
+}
+function run(){const q=$("q").value.trim();document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.q===q));tab==="live"?live(q):sample(q)}
+run();
+</script>
 </body></html>
